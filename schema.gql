@@ -20,8 +20,14 @@ type Query {
 
 type Mutation {
   createSample(createSampleInput: CreateSampleInput!): SampleType!
+  createUser(user: CreateUserInput!): User!
 }
 
 input CreateSampleInput {
   message: String!
+}
+
+input CreateUserInput {
+  name: String!
+  email: String!
 }
