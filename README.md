@@ -22,6 +22,68 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
+## Folder
+
+```
+src/
+├── modules/
+│   ├── user/
+│   │   ├── dto/
+│   │   │   ├── create-user.input.ts      # Định nghĩa các GraphQL InputType cho User
+│   │   │   ├── update-user.input.ts      # InputType để cập nhật User
+│   │   ├── entities/
+│   │   │   ├── user.entity.ts            # Định nghĩa Entity cho TypeORM
+│   │   ├── user.module.ts                # Định nghĩa module User
+│   │   ├── user.resolver.ts              # Resolver cho GraphQL
+│   │   ├── user.service.ts               # Xử lý nghiệp vụ liên quan đến User
+│   └── other-module/                     # Module khác, cấu trúc tương tự user
+├── common/
+│   ├── decorators/                       # Các decorator tái sử dụng
+│   ├── exceptions/                       # Quản lý ngoại lệ (exceptions)
+│   ├── filters/                          # Lọc và xử lý lỗi
+│   ├── guards/                           # Bảo vệ (guard), ví dụ: AuthGuard
+│   ├── helpers/                          # Các hàm hỗ trợ chung
+│   ├── interceptors/                     # Tùy chỉnh luồng request/response
+│   ├── pipes/                            # Pipes để xử lý dữ liệu đầu vào
+├── config/
+│   ├── database.config.ts                # Cấu hình kết nối database
+│   ├── graphql.config.ts                 # Cấu hình GraphQL
+│   ├── app.config.ts                     # Cấu hình ứng dụng
+├── app.module.ts                         # Module gốc, đăng ký các module con
+├── main.ts                               # File khởi động ứng dụng
+└── graphql.schema.ts                     # Tùy chọn, schema được tạo tự động
+
+1. modules/
+
+Chứa các module trong ứng dụng, mỗi module đại diện cho một thành phần hoặc chức năng riêng biệt. Mỗi module bao gồm:
+	•	dto/: Chứa các GraphQL InputType, ví dụ: create-user.input.ts.
+	•	entities/: Chứa các Entity dùng cho TypeORM, ví dụ: user.entity.ts.
+	•	user.module.ts: Định nghĩa module NestJS.
+	•	user.resolver.ts: Resolver xử lý các query và mutation của GraphQL.
+	•	user.service.ts: Service xử lý logic nghiệp vụ.
+
+2. common/
+
+Chứa các thành phần chung được tái sử dụng trong toàn bộ ứng dụng:
+	•	decorators/: Các decorator tuỳ chỉnh, ví dụ: @Auth().
+	•	filters/: Xử lý lỗi toàn cục.
+	•	guards/: Các guard bảo vệ như AuthGuard.
+	•	pipes/: Pipes để xử lý dữ liệu đầu vào.
+
+3. config/
+
+Cấu hình cho ứng dụng:
+	•	database.config.ts: Cấu hình TypeORM (PostgreSQL/MySQL).
+	•	graphql.config.ts: Cấu hình GraphQL, ví dụ: ApolloDriver.
+	•	app.config.ts: Cấu hình chung, ví dụ: PORT, ENVIRONMENT.
+
+4. File quan trọng
+
+	•	app.module.ts: Đăng ký các module con, cấu hình toàn bộ ứng dụng.
+	•	main.ts: Điểm khởi đầu ứng dụng, khởi chạy NestJS.
+	•	graphql.schema.ts: Tạo schema tự động khi dùng autoSchemaFile: true.
+```
+
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
