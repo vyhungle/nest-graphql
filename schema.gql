@@ -6,8 +6,16 @@ type SampleType {
   message: String!
 }
 
+type User {
+  id: Int!
+  email: String!
+  fullName: String!
+}
+
 type Query {
   getSamples: [SampleType!]!
+  getusers: [User!]!
+  getById(id: Int!): User!
 }
 
 type Mutation {
