@@ -56,32 +56,32 @@ src/
 1. modules/
 
 Chứa các module trong ứng dụng, mỗi module đại diện cho một thành phần hoặc chức năng riêng biệt. Mỗi module bao gồm:
-•dto/: Chứa các GraphQL InputType, ví dụ: create-user.input.ts.
-•entities/: Chứa các Entity dùng cho TypeORM, ví dụ: user.entity.ts.
-•user.module.ts: Định nghĩa module NestJS.
-•user.resolver.ts: Resolver xử lý các query và mutation của GraphQL.
-•user.service.ts: Service xử lý logic nghiệp vụ.
+• dto/: Chứa các GraphQL InputType, ví dụ: create-user.input.ts.
+• entities/: Chứa các Entity dùng cho TypeORM, ví dụ: user.entity.ts.
+• user.module.ts: Định nghĩa module NestJS.
+• user.resolver.ts: Resolver xử lý các query và mutation của GraphQL.
+• user.service.ts: Service xử lý logic nghiệp vụ.
 
 2. common/
 
 Chứa các thành phần chung được tái sử dụng trong toàn bộ ứng dụng:
-•decorators/: Các decorator tuỳ chỉnh, ví dụ: @Auth().
-•filters/: Xử lý lỗi toàn cục.
-•guards/: Các guard bảo vệ như AuthGuard.
-•pipes/: Pipes để xử lý dữ liệu đầu vào.
+• decorators/: Các decorator tuỳ chỉnh, ví dụ: @Auth().
+• filters/: Xử lý lỗi toàn cục.
+• guards/: Các guard bảo vệ như AuthGuard.
+• pipes/: Pipes để xử lý dữ liệu đầu vào.
 
 3. config/
 
 Cấu hình cho ứng dụng:
-•database.config.ts: Cấu hình TypeORM (PostgreSQL/MySQL).
-•graphql.config.ts: Cấu hình GraphQL, ví dụ: ApolloDriver.
-•app.config.ts: Cấu hình chung, ví dụ: PORT, ENVIRONMENT.
+• database.config.ts: Cấu hình TypeORM (PostgreSQL/MySQL).
+• graphql.config.ts: Cấu hình GraphQL, ví dụ: ApolloDriver.
+• app.config.ts: Cấu hình chung, ví dụ: PORT, ENVIRONMENT.
 
 4. File quan trọng
 
-•app.module.ts: Đăng ký các module con, cấu hình toàn bộ ứng dụng.
-•main.ts: Điểm khởi đầu ứng dụng, khởi chạy NestJS.
-•graphql.schema.ts: Tạo schema tự động khi dùng autoSchemaFile: true.
+• app.module.ts: Đăng ký các module con, cấu hình toàn bộ ứng dụng.
+• main.ts: Điểm khởi đầu ứng dụng, khởi chạy NestJS.
+• graphql.schema.ts: Tạo schema tự động khi dùng autoSchemaFile: true.
 ```
 
 ## Description
