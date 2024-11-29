@@ -8,18 +8,18 @@ import { CreateUserInput } from './user.input';
 export class UserService {
   constructor(
     @InjectRepository(User)
-    private sampleRepository: Repository<User>,
+    private userRepository: Repository<User>,
   ) {}
 
   async findAll(): Promise<User[]> {
-    return this.sampleRepository.find();
+    return this.userRepository.find();
   }
   async findOne(id: number): Promise<User> {
-    return this.sampleRepository.findOneBy({ id });
+    return this.userRepository.findOneBy({ id });
   }
 
   async create(entity: CreateUserInput): Promise<User> {
-    const user = this.sampleRepository.create(entity);
-    return this.sampleRepository.save(user);
+    const user = this.userRepository.create(entity);
+    return this.userRepository.save(user);
   }
 }
